@@ -114,12 +114,16 @@ function vk_custom_store_test_rest_api_init() {
 			array(
 				'methods'             => 'GET',
 				'callback'            => 'get_vk_option_tests',
-				
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				}				
 			),
 			array(
 				'methods'             => 'POST',
 				'callback'            => 'update_vk_option_tests',
-
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				}
 			)
 		)
 	);
