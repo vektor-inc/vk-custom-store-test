@@ -7,7 +7,7 @@ const DEFAULT_STATE = {
 
 const HYDRATE_OPTIONS = 'HYDRATE_OPTIONS';
 
-const store = createReduxStore('vk-option-text/options', {
+const store = createReduxStore('vk-custom-store-test/options', {
 	reducer(state = DEFAULT_STATE, action) {
 		switch (action.type) {
 			case HYDRATE_OPTIONS:
@@ -29,7 +29,7 @@ const store = createReduxStore('vk-option-text/options', {
         saveOptions(options) {
             return async ({ dispatch }) => {
                 await apiFetch({
-                    path: 'vk-option-text/v2/settings',
+                    path: 'vk-custom-store-test/v2/settings',
                     method: 'POST',
                     data: options
 
@@ -49,7 +49,7 @@ const store = createReduxStore('vk-option-text/options', {
             return async ({ dispatch }) => {
                 try {
                     const options = await apiFetch({
-                        path: 'vk-option-text/v2/settings',
+                        path: 'vk-custom-store-test/v2/settings',
                         method: 'GET'
                     });
                     dispatch.hydrateOptions(options);

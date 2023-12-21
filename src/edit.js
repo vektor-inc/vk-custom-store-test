@@ -12,7 +12,7 @@ export default function Edit() {
     const closeModal = () => setOpen( false );
 
     const { options, setOptions, isLoading } = useOptionsData();
-    const { saveOptions } = useDispatch('vk-option-text/options');
+    const { saveOptions } = useDispatch('vk-custom-store-test/options');
 
     const handleSave = useCallback(() => {
         saveOptions(options).then(() => {
@@ -63,8 +63,8 @@ export default function Edit() {
             </InspectorControls>
             <p {...useBlockProps()}>
                 {__(
-                    'Vk Option Text – hello from the editor!',
-                    'vk-option-text'
+                    'Vk Custom Store Test – hello from the editor!',
+                    'vk-custom-store-test'
                 )}
             </p>
         </>

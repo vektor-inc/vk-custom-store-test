@@ -6,7 +6,7 @@ const useOptionsData = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const storeData = useSelect((select) => {
-        const store = select('vk-option-text/options');
+        const store = select('vk-custom-store-test/options');
         return {
             options: store.getOptions(),
             isLoading: store.isResolving('getOptions'),

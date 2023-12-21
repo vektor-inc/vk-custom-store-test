@@ -21,5 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log( 'Hello World! (from create-block-vk-option-text block)' );
+console.log( 'Hello World! (from create-block-vk-custom-store-test-text block)' );
 /* eslint-enable no-console */
