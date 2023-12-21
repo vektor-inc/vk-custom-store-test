@@ -114,13 +114,11 @@ function vk_option_text_rest_api_init() {
 			array(
 				'methods'             => 'GET',
 				'callback'            => 'get_vk_option_tests',
-				'permission_callback' => function () {
-					return current_user_can( 'edit_theme_options' );
-				},
+				
 			),
 			array(
 				'methods'             => 'POST',
-				'callback'            => 'updatew_vk_option_tests',
+				'callback'            => 'update_vk_option_tests',
 
 			)
 		)
@@ -132,7 +130,12 @@ function get_vk_option_tests() {
 	return rest_ensure_response( $options );
 }
 
-
+/**
+ * VK Blocks Rest Update Callback
+ *
+ * @param object $request — .
+ * @return \WP_REST_Response|\WP_Error
+ */
 function update_vk_option_tests( $request ) {
 	$json_params = $request->get_json_params();
 	update_option( 'vk_option_text_settings', $json_params );

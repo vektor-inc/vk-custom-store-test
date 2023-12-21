@@ -12,13 +12,13 @@ export default function Edit() {
     const closeModal = () => setOpen( false );
 
     const { options, setOptions, isLoading } = useOptionsData();
-    const { updateOptions } = useDispatch('vk-option-text/options');
+    const { saveOptions } = useDispatch('vk-option-text/options');
 
     const handleSave = useCallback(() => {
-        updateOptions(options).then(() => {
+        saveOptions(options).then(() => {
             alert('Settings saved');
         });
-    }, [options, updateOptions]);
+    }, [options, saveOptions]);
 
     return (
         <>

@@ -26,7 +26,7 @@ const store = createReduxStore('vk-option-text/options', {
 				value: values,
 			};            
         },
-        updateOptions(options) {
+        saveOptions(options) {
             return async ({ dispatch }) => {
                 await apiFetch({
                     path: 'vk-option-text/v2/settings',
